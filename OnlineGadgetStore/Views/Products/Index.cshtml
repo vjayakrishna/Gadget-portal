@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OnlineGadgetStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    if (!TempData.ContainsKey("Name"))
+    {
+        TempData["Name"] = "";
+    }
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Add New</a>
+</p>
+
+<form asp-action="Index">
+    <p>
+        <label class="control-label" style="width:60px">Name:</label>
+        <input class="input-sm" type="text" name="SearchString" style="width:350px" value="@TempData["Name"]" />
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td width="400">
+                @if (item.ImageURLs.Count > 0)
+                {
+                    <a asp-action="Details" asp-route-id="@item.ID">
+                        <img src="~/images/Products/@item.ImageURLs[0].URL" alt="Your Image" class="center-block" height="200" />
+                    </a>
+
+                }
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ID">
+                    <h4>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </h4>
+                </a>
+            </td>
+            <td>
+                <h4>
+                    $
+                    @Html.DisplayFor(modelItem => item.Price)
+                </h4>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

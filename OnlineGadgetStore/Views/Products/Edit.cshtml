@@ -1,0 +1,254 @@
+﻿@model OnlineGadgetStore.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    if (!TempData.ContainsKey("FileName"))
+    {
+        TempData["FileName"] = "";
+        ViewData["FileName"] = "";
+    }
+    else
+    {
+        ViewData["FileName"] = TempData["FileName"];
+
+    }
+}
+
+<h2>Edit</h2>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <hr />
+            <input type="hidden" asp-for="ProductInfo.ID" />
+            <div class="form-group" style="border:solid; border-color:whitesmoke; border-width:1px">
+                <h3>Features</h3>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        <label asp-for="ProductInfo.ModelName" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.ModelName" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Color" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Color" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Touchscreen" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Touchscreen" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.DisplaySize" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.DisplaySize" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Resolution" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Resolution" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.ResolutionType" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.ResolutionType" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.DisplayType" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.DisplayType" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.OperatingSystem" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.OperatingSystem" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Processor" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Processor" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.InternalStorage" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.InternalStorage" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.PrimaryCamera" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.PrimaryCamera" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.SecondaryCamera" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.SecondaryCamera" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.NetworkType" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.NetworkType" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.SupportedNetworks" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.SupportedNetworks" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.InternetConnectivity" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.InternetConnectivity" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.WiFi" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.WiFi" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.WiFiVersion" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.WiFiVersion" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.MapSupport" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.MapSupport" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.GPSSupport" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.GPSSupport" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Sensors" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Sensors" class="form-control" />
+                    </dd>
+                    <dt>
+                        <label asp-for="ProductInfo.Warranty" class="control-label"></label>
+                    </dt>
+                    <dd>
+                        <input asp-for="ProductInfo.Warranty" class="form-control" />
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=false>
+            <ol class="carousel-indicators" style="bottom:-20px">
+                @for (int i = 0; i < Model.ImageURLs.Count; i++)
+                {
+                    @if (i == 0)
+                    {
+                        <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: grey"></li>
+                    }
+                    else
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@i" style="background-color:grey"></li>
+                    }
+
+                }
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                @foreach (var img in Model.ImageURLs)
+                {
+                    @if (img.Equals(Model.ImageURLs[0]))
+                    {
+                        <div class="item active" role="img">
+                            <img src="~/images/Products/@img.URL" alt="Your Image" class="center-block" style="height:300px" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="item">
+                            <img src="~/images/Products/@img.URL" alt="Your Image" class="center-block" style="height:300px" />
+                        </div>
+                    }
+
+                }
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <hr />
+    </div>
+    <div class="col-md-4">
+        <form asp-action="EditImages" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <input type="hidden" asp-for="ID" />
+                <legend> Upload Images </legend>
+                <label for="Image">Image</label>
+                <input type="file" name="pictures" multiple class="form-control" />
+                <br />
+                <input type="submit" value="Upload" class="btn btn-default" />
+            </fieldset>
+            @if (!TempData["FileName"].Equals(""))
+            {
+                <label>Images Uploaded.</label>
+            }
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

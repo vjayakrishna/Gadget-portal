@@ -1,0 +1,12 @@
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\bin\Debug\netcoreapp2.0\OnlineGadgetStore.deps.json
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\bin\Debug\netcoreapp2.0\OnlineGadgetStore.runtimeconfig.json
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\bin\Debug\netcoreapp2.0\OnlineGadgetStore.runtimeconfig.dev.json
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\bin\Debug\netcoreapp2.0\OnlineGadgetStore.dll
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\bin\Debug\netcoreapp2.0\OnlineGadgetStore.pdb
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.csprojAssemblyReference.cache
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.csproj.CoreCompileInputs.cache
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.AssemblyInfoInputs.cache
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.AssemblyInfo.cs
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.dll
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\OnlineGadgetStore.pdb
+C:\Users\Jay\source\repos\OnlineGadgetStore\OnlineGadgetStore\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

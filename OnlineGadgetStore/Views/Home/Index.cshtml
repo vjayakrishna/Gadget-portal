@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OnlineGadgetStore.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+    if (!TempData.ContainsKey("Name"))
+    {
+        TempData["Name"] = "";
+    }
+}
+
+<div >
+
+    <h2>Home</h2>
+    <form asp-action="Index">
+        <p>
+            <label class="control-label" style="width:60px">Name:</label>
+            <input class="input-sm" type="text" name="SearchString" style="width:350px" value="@TempData["Name"]" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        </p>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="400">
+                        @if (item.ImageURLs.Count > 0)
+                        {
+                            <a asp-action="Details" asp-controller="Products" asp-route-id="@item.ID">
+                                <img src="~/images/Products/@item.ImageURLs[0].URL" alt="Your Image" class="center-block" height="180" />
+                            </a>
+
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Products" asp-route-id="@item.ID">
+                            <h4>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </h4>
+                        </a>
+                    </td>
+                    <td>
+                        <h4>
+                            $
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </h4>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

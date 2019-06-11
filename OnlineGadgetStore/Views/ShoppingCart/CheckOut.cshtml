@@ -1,0 +1,66 @@
+﻿@model OnlineGadgetStore.Models.ShoppingCart
+@{
+    ViewData["Title"] = "CheckOut";
+}
+
+<h2>Your Order is placed successfully</h2>
+
+
+<div>
+        <input type="hidden" asp-for="ID" />
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th>
+                        <label>Name</label>
+                    </th>
+                    <th>
+                        <label>Quantity</label>
+                    </th>
+                    <th>
+                        <label>Price</label>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.LineProducts)
+                {
+                    <tr>
+                        @*<td width="400">
+                                @if (item.Product.ImageURLs.Count > 0)
+                                {
+                                    <a asp-action="Details" asp-route-id="@item.ID">
+                                        <img src="~/images/Products/@item.Product.ImageURLs[0].URL" alt="Your Image" class="center-block" height="200" />
+                                    </a>
+
+                                }
+                            </td>*@
+                        <td>                      
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            $
+                            @Html.DisplayFor(modelItem => item.Price)
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <hr />
+        <h4>Total: $ @Html.DisplayFor(model => model.TotalPrice)</h4>
+
+</div>
+
+<br />
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to Home</a>
+</div>
+
+
